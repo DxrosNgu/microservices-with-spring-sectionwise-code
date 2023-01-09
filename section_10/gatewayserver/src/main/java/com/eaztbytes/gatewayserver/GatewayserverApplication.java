@@ -16,7 +16,7 @@ public class GatewayserverApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GatewayserverApplication.class, args);
 	}
-	
+	/** Investigate how to configure the routes in the YML **/
 	@Bean
 	public RouteLocator myRoutes(RouteLocatorBuilder builder) {
 	    return builder.routes()

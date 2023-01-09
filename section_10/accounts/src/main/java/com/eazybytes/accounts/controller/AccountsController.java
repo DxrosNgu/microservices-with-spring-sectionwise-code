@@ -72,8 +72,6 @@ public class AccountsController {
 	}
 	
 	@PostMapping("/myCustomerDetails")
-	
-	
 	@CircuitBreaker(name = "detailsForCustomerSupportApp",fallbackMethod="myCustomerDetailsFallBack")
 	@Retry(name = "retryForCustomerDetails", fallbackMethod = "myCustomerDetailsFallBack")
 	public CustomerDetails myCustomerDetails(@RequestHeader("eazybank-correlation-id") String correlationid,@RequestBody Customer customer) {
