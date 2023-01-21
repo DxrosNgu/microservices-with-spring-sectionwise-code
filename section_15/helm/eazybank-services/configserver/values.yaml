@@ -6,7 +6,7 @@ deploymentLabel: configserver
 replicaCount: 1
 
 image:
-  repository: eazybytes/configserver
+  repository: danyosa2020/configserver
   tag: latest
 
 containerPort: 8071

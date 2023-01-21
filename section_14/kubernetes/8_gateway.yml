@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: gatewayserver
-        image: eazybytes/gatewayserver:latest
+        image: danyosa2020/gatewayserver:latest
         ports:
         - containerPort: 8072
         env:

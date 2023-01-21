@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: loans
-        image: eazybytes/loans:latest
+        image: danyosa2020/loans:latest
         ports:
         - containerPort: 8090
         env:

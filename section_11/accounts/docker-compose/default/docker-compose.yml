@@ -8,15 +8,15 @@ services:
     ports:
       - "9411:9411"
     networks:
-     - eazybank
+     - anyobank
   
   configserver:
-    image: eazybytes/configserver:latest
+    image: danyosa2020/configserver:latest
     mem_limit: 700m
     ports:
       - "8071:8071"
     networks:
-     - eazybank
+     - anyobank
     depends_on:
       - zipkin
     environment:
@@ -24,12 +24,12 @@ services:
       SPRING_ZIPKIN_BASEURL: http://zipkin:9411/
    
   eurekaserver:
-    image: eazybytes/eurekaserver:latest
+    image: danyosa2020/eurekaserver:latest
     mem_limit: 700m
     ports:
       - "8070:8070"
     networks:
-     - eazybank
+     - anyobank
     depends_on:
       - configserver
     deploy:
@@ -44,12 +44,12 @@ services:
       SPRING_ZIPKIN_BASEURL: http://zipkin:9411/
       
   accounts:
-    image: eazybytes/accounts:latest
+    image: danyosa2020/accounts:latest
     mem_limit: 700m
     ports:
       - "8080:8080"
     networks:
-      - eazybank
+      - anyobank
     depends_on:
       - configserver
       - eurekaserver
@@ -66,12 +66,12 @@ services:
       SPRING_ZIPKIN_BASEURL: http://zipkin:9411/
   
   loans:
-    image: eazybytes/loans:latest
+    image: danyosa2020/loans:latest
     mem_limit: 700m
     ports:
       - "8090:8090"
     networks:
-      - eazybank
+      - anyobank
     depends_on:
       - configserver
       - eurekaserver
@@ -88,12 +88,12 @@ services:
       SPRING_ZIPKIN_BASEURL: http://zipkin:9411/
     
   cards:
-    image: eazybytes/cards:latest
+    image: danyosa2020/cards:latest
     mem_limit: 700m
     ports:
       - "9000:9000"
     networks:
-      - eazybank
+      - anyobank
     depends_on:
       - configserver
       - eurekaserver
@@ -110,12 +110,12 @@ services:
       SPRING_ZIPKIN_BASEURL: http://zipkin:9411/
    
   gatewayserver:
-    image: eazybytes/gatewayserver:latest
+    image: danyosa2020/gatewayserver:latest
     mem_limit: 700m
     ports:
       - "8072:8072"
     networks:
-      - eazybank
+      - anyobank
     depends_on:
       - configserver
       - eurekaserver
@@ -135,4 +135,4 @@ services:
       SPRING_ZIPKIN_BASEURL: http://zipkin:9411/
       
 networks:
-  eazybank:
+  anyobank:
