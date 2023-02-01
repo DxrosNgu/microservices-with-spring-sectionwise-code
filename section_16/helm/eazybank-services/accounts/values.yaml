@@ -7,13 +7,13 @@ deploymentLabel: accounts
 replicaCount: 2
 
 image:
-  repository: eazybytes/accounts
+  repository: danyosa2020/accounts
   tag: latest
 
 containerPort: 8080
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 8080
   targetPort: 8080
 

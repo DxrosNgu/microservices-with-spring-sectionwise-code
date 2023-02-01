@@ -7,7 +7,7 @@ deploymentLabel: gatewayserver
 replicaCount: 1
 
 image:
-  repository: eazybytes/gatewayserver
+  repository: danyosa2020/gatewayserver
   tag: latest
 
 containerPort: 8072
